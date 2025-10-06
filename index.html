@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>ESP32 LED Status</title>
+  <title>ESP32 Status</title>
   <script type="module">
     // Import Firebase
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
@@ -29,12 +29,16 @@
     const ledRef = ref(db, 'led/state');
     onValue(ledRef, (snapshot) => {
       const state = snapshot.val();
-      ledStatus.textContent = state === 1 ? "ON" : "OFF";
+      ledStatus.textContent = state === 1 ? "On" : "Off";
     });
   </script>
 </head>
 <body>
   <h1>ESP32 LED Status</h1>
-  <p>LED is currently: <span id="led-status">Loading...</span></p>
+  <p>LED: <span id="led-status">Loading...</span></p>
+  <p>Soil moisture: None</p>
+  <p>Light: None</p>
+  <p>Temperature: None</p>
+  <p>Humidity: None</p>
 </body>
 </html>
