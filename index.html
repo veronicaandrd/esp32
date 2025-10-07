@@ -19,24 +19,47 @@
       // appId: "YOUR_APP_ID"
     };
 
-    // Initialize Firebase
+        // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
+    const auth = getAuth();
 
-    const ledStatus = document.getElementById('led-status');
-
-    // Listen for changes in the LED state
     const ledRef = ref(db, 'led/state');
-    onValue(ledRef, (snapshot) => {
-      const state = snapshot.val();
-      ledStatus.textContent = state === 1 ? "On" : "Off";
-    });
+    const ledStatus = document.getElementById('led-status');
+    const toggleBtn = document.getElementById('toggle-btn');
+
+    let currentState = 0;
+
+    // Sign in anonymously first
+    signInAnonymously(auth)
+      .then(() => {
+        console.log("Signed in anonymously");
+
+        // Listen for LED changes
+        onValue(ledRef, (snapshot) => {
+          currentState = snapshot.val();
+          ledStatus.textContent = currentState === 1 ? "ON" : "OFF";
+          ledStatus.style.backgroundColor = currentState ? "#4caf50" : "#f44336";
+        });
+
+        // Toggle button
+        toggleBtn.addEventListener('click', async () => {
+          const newState = currentState ? 0 : 1;
+          await set(ledRef, newState);
+        });
+      })
+      .catch((error) => {
+        console.error("Auth error:", error);
+        alert("Failed to authenticate. Check console.");
+      });
   </script>
+
+  
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>ESP32 Status</h1>
-  <p>LED: <span id="led-status">Loading...</span></p>
+  <p>LED: <span id="led-status">Loading...</span></p>  <button id="toggle-btn">Switch on/off</button>
   <p>Soil moisture: None</p>
   <p>Light: None</p>
   <p>Temperature: None</p>
