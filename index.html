@@ -33,7 +33,7 @@
     onValue(ledRef, (snapshot) => {
       currentState = snapshot.val();
       ledStatus.textContent = currentState === 1 ? "ON" : "OFF";
-      ledStatus.style.backgroundColor = currentState ? "#4caf50" : "#f44336";
+      ledStatus.style.Color = currentState ? "#4caf50" : "#f44336";
     });
 
     // Toggle LED on button click
