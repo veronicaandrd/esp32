@@ -32,7 +32,7 @@
     // Listen for LED state changes
     onValue(ledRef, (snapshot) => {
       currentState = snapshot.val();
-      ledStatus.textContent = currentState === 1 ? "ON" : "OFF";
+      ledStatus.textContent = currentState === 1 ? "On" : "Off";
       ledStatus.style.Color = currentState ? "#4caf50" : "#f44336";
     });
 
