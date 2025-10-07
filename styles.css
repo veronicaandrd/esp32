@@ -17,7 +17,6 @@ p {
     margin: 0 0 4px;
 }
 
-
 button {
     padding: 4px 8px;
     margin-bottom: 12px;
@@ -27,4 +26,8 @@ button {
     cursor: pointer;
     background-color: #2e61d1;
     color: white;
+}
+
+button:hover {
+    background-color: #222222;
 }
