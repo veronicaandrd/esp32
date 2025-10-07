@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>ESP32 Status</title>
-  <script type="module">
-    // Import Firebase
+<script type="module">
+    // Import Firebase SDK
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+    import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+    import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
-    // Your Firebase config
+    // 🔧 Your Firebase config (replace with your own)
     const firebaseConfig = {
       apiKey: "AIzaSyBVk11JNOwG_1kpmZQS2G4hW_5gqm9cg3o",
       authDomain: "https://esp32ledcontrol-411b4.firebaseio.com/",
