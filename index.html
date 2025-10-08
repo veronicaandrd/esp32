@@ -22,32 +22,37 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
-
+  
     const tempRef = ref(db, 'sensor/temperature');
     const humRef = ref(db, 'sensor/humidity');
-
     const ledRef = ref(db, 'led/state');
+  
     const ledStatus = document.getElementById('led-status');
     const toggleBtn = document.getElementById('toggle-btn');
-
+  
     let currentState = 0;
 
-    // Listen for LED state changes
+    // LED state listener
     onValue(ledRef, (snapshot) => {
       currentState = snapshot.val();
       ledStatus.textContent = currentState === 1 ? "On" : "Off";
       ledStatus.style.color = currentState ? "#4caf50" : "#f44336";
     });
-
-    // Toggle LED on button click
+  
+    // Toggle LED
     toggleBtn.addEventListener('click', async () => {
       const newState = currentState ? 0 : 1;
       await set(ledRef, newState);
     });
-
-    onValue(tempRef, snap => document.getElementById('temp').textContent = snap.val() + " °C");
-    onValue(humRef, snap => document.getElementById('hum').textContent = snap.val() + " %");
   
+    // Temperature and humidity listeners
+    onValue(tempRef, (snap) => {
+      document.getElementById('temp').textContent = snap.val() + " °C";
+    });
+  
+    onValue(humRef, (snap) => {
+      document.getElementById('hum').textContent = snap.val() + " %";
+    });
   </script>
 
   
@@ -56,8 +61,8 @@
 <body>
   <h1>ESP32 Status</h1>
   <p>LED: <span id="led-status">Loading...</span></p>
-  <p>Temperature: <span id="temp">--</span></p>
-  <p>Humidity: <span id="hum">--</span></p>
+  <p>Temperature: <span id="temp"></span></p>
+  <p>Humidity: <span id="hum"></span></p>
   <p>Soil moisture: None</p>
   <p>Light: None</p>
 </body>
