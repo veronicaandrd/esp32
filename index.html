@@ -26,6 +26,8 @@
     const ledRef = ref(db, 'led/state');
     const ledStatus = document.getElementById('led-status');
     const toggleBtn = document.getElementById('toggle-btn');
+    const tempRef = ref(db, 'sensor/temperature');
+    const humRef = ref(db, 'sensor/humidity');
 
     let currentState = 0;
 
@@ -41,6 +43,10 @@
       const newState = currentState ? 0 : 1;
       await set(ledRef, newState);
     });
+
+    onValue(tempRef, snap => document.getElementById('temp').textContent = snap.val() + " °C");
+    onValue(humRef, snap => document.getElementById('hum').textContent = snap.val() + " %");
+  
   </script>
 
   
@@ -49,9 +55,9 @@
 <body>
   <h1>ESP32 Status</h1>
   <p>LED: <span id="led-status">Loading...</span></p>
+  <p>Temperature: <span id="temp">--</span></p>
+  <p>Humidity: <span id="hum">--</span></p>
   <p>Soil moisture: None</p>
   <p>Light: None</p>
-  <p>Temperature: None</p>
-  <p>Humidity: None</p>
 </body>
 </html>
