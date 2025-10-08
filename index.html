@@ -41,7 +41,6 @@
     const ledRef = ref(db, 'led/state');
   
     const ledStatus = document.getElementById('led-status');
-    const toggleBtn = document.getElementById('toggle-btn');
   
     let currentState = 0;
 
@@ -50,12 +49,6 @@
       currentState = snapshot.val();
       ledStatus.textContent = currentState === 1 ? "On" : "Off";
       ledStatus.style.color = currentState ? "#4caf50" : "#f44336";
-    });
-  
-    // Toggle LED
-    toggleBtn.addEventListener('click', async () => {
-      const newState = currentState ? 0 : 1;
-      await set(ledRef, newState);
     });
   
     // Temperature and humidity listeners
