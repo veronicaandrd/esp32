@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html>
+  
 <head>
   <meta charset="UTF-8">
   <title>ESP32 Status</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  
+<body>
+  <h1>ESP32 Status</h1>
+  <p>LED: <span id="led-status">Loading...</span></p>
+  <p>Temperature: <span id="temp"></span></p>
+  <p>Humidity: <span id="hum"></span></p>
+  <p>Soil moisture: None</p>
+  <p>Light: None</p>
+</body>
+  
 <script type="module">
+  window.addEventListener("DOMContentLoaded", () => {
     // Import Firebase SDK modules directly from CDN
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
     import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
@@ -53,17 +67,7 @@
     onValue(humRef, (snap) => {
       document.getElementById('hum').textContent = snap.val() + " %";
     });
-  </script>
-
+  } 
+</script>
   
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <h1>ESP32 Status</h1>
-  <p>LED: <span id="led-status">Loading...</span></p>
-  <p>Temperature: <span id="temp"></span></p>
-  <p>Humidity: <span id="hum"></span></p>
-  <p>Soil moisture: None</p>
-  <p>Light: None</p>
-</body>
 </html>
