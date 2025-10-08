@@ -24,10 +24,10 @@
     const db = getDatabase(app);
 
     const ledRef = ref(db, 'led/state');
-    const ledStatus = document.getElementById('led-status');
-    const toggleBtn = document.getElementById('toggle-btn');
     const tempRef = ref(db, 'sensor/temperature');
     const humRef = ref(db, 'sensor/humidity');
+    const ledStatus = document.getElementById('led-status');
+    const toggleBtn = document.getElementById('toggle-btn');
 
     let currentState = 0;
 
