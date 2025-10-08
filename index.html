@@ -17,8 +17,7 @@
 </body>
   
 <script type="module">
-  window.addEventListener("DOMContentLoaded", () => {
-    // Import Firebase SDK modules directly from CDN
+// Import Firebase SDK modules directly from CDN
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
     import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
 
@@ -66,8 +65,7 @@
   
     onValue(humRef, (snap) => {
       document.getElementById('hum').textContent = snap.val() + " %";
-    });
-  } 
+    }); 
 </script>
   
 </html>
