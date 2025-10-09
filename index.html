@@ -12,8 +12,10 @@
   <p>LED: <span id="led-status">Loading...</span></p>
   <p>Temperature: <span id="temp"></span></p>
   <p>Humidity: <span id="hum"></span></p>
-  <p>Soil moisture: None</p>
+  <p>Soil moisture: <span id="soil"></span></p>
   <p>Light: None</p>
+  <br>
+  <p id="last-updated">Last updated: --</p>
 </body>
   
 <script type="module">
@@ -38,9 +40,17 @@
   
     const tempRef = ref(db, 'sensor/temperature');
     const humRef = ref(db, 'sensor/humidity');
+    const soilRef = ref(db, 'sensor/soilMoisture');
     const ledRef = ref(db, 'led/state');
   
     const ledStatus = document.getElementById('led-status');
+
+    // Function to update "last updated" time
+    function updateTimestamp() {
+      const now = new Date();
+      const formatted = now.toLocaleString(); // e.g., "10/6/2025, 14:32:45"
+      document.getElementById('last-updated').textContent = `Last updated: ${formatted}`;
+    }
   
     let currentState = 0;
 
@@ -48,17 +58,25 @@
     onValue(ledRef, (snapshot) => {
       currentState = snapshot.val();
       ledStatus.textContent = currentState === 1 ? "On" : "Off";
-      ledStatus.style.color = currentState ? "#4caf50" : "#f44336";
+      ledStatus.style.color = currentState ? "#4caf50" : "#333333";
     });
   
     // Temperature and humidity listeners
     onValue(tempRef, (snap) => {
       document.getElementById('temp').textContent = snap.val() + " °C";
+      updateTimestamp();
     });
   
     onValue(humRef, (snap) => {
       document.getElementById('hum').textContent = snap.val() + " %";
+      updateTimestamp();
     }); 
+
+    onValue(soilRef, snap => {
+      document.getElementById('soil').textContent = snap.val() + " %";
+      updateTimestamp();
+    }); 
+
 </script>
   
 </html>
