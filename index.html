@@ -12,7 +12,7 @@
   <p>LED: <span id="led-status">Loading...</span></p>
   <p>Temperature: <span id="temp"></span></p>
   <p>Humidity: <span id="hum"></span></p>
-  <p>Soil moisture: <span id="soil"></span></p>
+  <p>Soil moisture: <span id="capacitiveSoilMoisture"></span></p>
   <p>Light: No data</p>
   <p>Last movement: No data</p>
   <br>
@@ -41,7 +41,7 @@
   
     const tempRef = ref(db, 'sensor/temperature');
     const humRef = ref(db, 'sensor/humidity');
-    const soilRef = ref(db, 'sensor/soilMoisture');
+    const soilRef = ref(db, 'sensor/capacitiveSoilMoisture');
     const ledRef = ref(db, 'led/state');
   
     const ledStatus = document.getElementById('led-status');
@@ -74,7 +74,7 @@
     }); 
 
     onValue(soilRef, snap => {
-      document.getElementById('soil').textContent = snap.val() + " %";
+      document.getElementById('capacitiveSoilMoisture').textContent = snap.val() + " %";
       updateTimestamp();
     }); 
 
