@@ -42,7 +42,7 @@
     const tempRef = ref(db, 'sensor/temperature');
     const humRef = ref(db, 'sensor/humidity');
     const soilRef = ref(db, 'sensor/capacitiveSoilMoisture');
-    const soilRef = ref(db, 'sensor/lightLux');
+    const lightRef = ref(db, 'sensor/lightLux');
     const ledRef = ref(db, 'led/state');
   
     const ledStatus = document.getElementById('led-status');
@@ -63,7 +63,7 @@
       ledStatus.style.color = currentState ? "#4caf50" : "#333333";
     });
   
-    // Temperature and humidity listeners
+    // Sensor listeners
     onValue(tempRef, (snap) => {
       document.getElementById('temp').textContent = snap.val() + " °C";
       updateTimestamp();
@@ -76,6 +76,11 @@
 
     onValue(soilRef, snap => {
       document.getElementById('capacitiveSoilMoisture').textContent = snap.val() + " %";
+      updateTimestamp();
+    }); 
+
+    onValue(lightRef, snap => {
+      document.getElementById('lightLux').textContent = snap.val() + " %";
       updateTimestamp();
     }); 
 
