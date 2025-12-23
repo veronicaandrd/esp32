@@ -65,22 +65,22 @@
   
     // Sensor listeners
     onValue(tempRef, (snap) => {
-      document.getElementById('temp').textContent = snap.val() + " °C";
+      document.getElementById('temp').textContent = snap.val() + "°C";
       updateTimestamp();
     });
   
     onValue(humRef, (snap) => {
-      document.getElementById('hum').textContent = snap.val() + " %";
+      document.getElementById('hum').textContent = snap.val() + "%";
       updateTimestamp();
     }); 
 
     onValue(soilRef, snap => {
-      document.getElementById('capacitiveSoilMoisture').textContent = snap.val() + " %";
+      document.getElementById('capacitiveSoilMoisture').textContent = snap.val() + "%";
       updateTimestamp();
     }); 
 
     onValue(lightRef, snap => {
-      document.getElementById('lightLux').textContent = snap.val() + " %";
+      document.getElementById('lightLux').textContent = snap.val() + " lux";
       updateTimestamp();
     }); 
 
