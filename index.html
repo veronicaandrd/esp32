@@ -13,7 +13,7 @@
   <p>Temperature: <span id="temp"></span></p>
   <p>Humidity: <span id="hum"></span></p>
   <p>Soil moisture: <span id="capacitiveSoilMoisture"></span></p>
-  <p>Light: No data</p>
+  <p>Light: <span id="lightLux"></span></p>
   <p>Last movement: No data</p>
   <br>
   <p id="last-updated">Last updated: --</p>
@@ -42,6 +42,7 @@
     const tempRef = ref(db, 'sensor/temperature');
     const humRef = ref(db, 'sensor/humidity');
     const soilRef = ref(db, 'sensor/capacitiveSoilMoisture');
+    const soilRef = ref(db, 'sensor/lightLux');
     const ledRef = ref(db, 'led/state');
   
     const ledStatus = document.getElementById('led-status');
