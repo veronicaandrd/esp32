@@ -14,7 +14,7 @@
   <p>Humidity: <span id="hum"></span></p>
   <p>Soil moisture: <span id="capacitiveSoilMoisture"></span></p>
   <p>Light: <span id="lux"></span></p>
-  <p>Last movement: No data</p>
+  <p>Movement: <span id="motion"></span></p>
   <br>
   <p id="last-updated">Last updated: --</p>
 </body>
@@ -26,7 +26,7 @@
 
     // 🔧 Your Firebase config (replace these with your actual project values)
     const firebaseConfig = {
-      apiKey: "AIzaSyBVk11JNOwG_1kpmZQS2G4hW_5gqm9cg3o",
+      apiKey: "firebaseKey",
       authDomain: "esp32ledcontrol-411b4.firebaseapp.com",
       databaseURL: "https://esp32ledcontrol-411b4-default-rtdb.firebaseio.com/",
       projectId: "esp32ledcontrol-411b4",
@@ -43,6 +43,7 @@
     const humRef = ref(db, 'sensor/humidity');
     const soilRef = ref(db, 'sensor/capacitiveSoilMoisture');
     const lightRef = ref(db, 'sensor/light/lux');
+    const lightRef = ref(db, 'sensor/motion');
     const ledRef = ref(db, 'led/state');
   
     const ledStatus = document.getElementById('led-status');
@@ -81,6 +82,11 @@
 
     onValue(lightRef, snap => {
       document.getElementById('lux').textContent = snap.val() + " lux";
+      updateTimestamp();
+    }); 
+
+      onValue(motionRef, snap => {
+      document.getElementById('motion').textContent = snap.val() + "";
       updateTimestamp();
     }); 
 
