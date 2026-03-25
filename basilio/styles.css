@@ -10,7 +10,7 @@ a {
 
 body {
   background: linear-gradient(160deg, #EAEAEA, #F9F9F9);
-  background-attachment: fixed;
+  // background-attachment: fixed;
   font-family: "IBM Plex Sans", sans-serif;
 }
 
@@ -79,9 +79,9 @@ body {
 
 .post-text {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 30px;
+  line-height: 28px;
   color: #444444;
   margin-bottom: 12px;
 }
