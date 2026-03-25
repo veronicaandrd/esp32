@@ -58,7 +58,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   color: #333333;
-  margin: 2px 0 6px;
+  margin: 2px 0 5px;
 }
 
 .mood-pill {
@@ -79,9 +79,9 @@ body {
 
 .post-text {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
-  line-height: 32px;
+  line-height: 30px;
   color: #444444;
   margin-bottom: 12px;
 }
@@ -90,7 +90,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   color: #777777;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .card-section {
