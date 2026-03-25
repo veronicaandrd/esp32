@@ -42,7 +42,7 @@ body {
 
 .screen {
   height: 100dvh;
-  padding: 40px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
 }
