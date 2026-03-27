@@ -17,11 +17,13 @@ body {
 .bg1 {
   background: linear-gradient(160deg, #C9D2FB, #FDF5F4);
   // background-attachment: fixed;
+  font-family: "Inter Tight", sans-serif;
 }
 
 .bg2 {
   background: linear-gradient(160deg, #E3F2A6, #FFF9D5);
   // background-attachment: fixed;
+  font-family: "Inter Tight", sans-serif;
 }
 
 .buttons {
@@ -59,7 +61,7 @@ body {
   padding: 17px;
   border-radius: 32px;
   color: #CDCDCD;
-  cursor: pointer;
+  cursor: not-allowed;
   border: none;
   display: inline-flex;
 }
