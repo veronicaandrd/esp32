@@ -26,6 +26,12 @@ body {
   font-family: "Inter Tight", sans-serif;
 }
 
+.bg2 {
+  background: linear-gradient(160deg, #F9F9F9, #EAEAEA);
+  // background-attachment: fixed;
+  font-family: "Inter Tight", sans-serif;
+}
+
 .buttons {
   display: flex;
   justify-content: space-between;
@@ -113,6 +119,10 @@ body {
   letter-spacing: 0.4px;
   color: #777777;
   margin-top: 16px;
+}
+
+.text-icon {
+  margin-left: 16px;
 }
 
 .card-section {
