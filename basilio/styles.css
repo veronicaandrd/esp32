@@ -11,7 +11,7 @@ a {
 body {
   background: linear-gradient(160deg, #EAEAEA, #F9F9F9);
   // background-attachment: fixed;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Inter Tight", sans-serif;
 }
 
 .buttons {
@@ -33,7 +33,7 @@ body {
   line-height: 20px;
   padding: 17px;
   border-radius: 32px;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Inter Tight", sans-serif;
   color: #444444;
   cursor: pointer;
   border: none;
@@ -54,7 +54,7 @@ body {
 }
 
 .plant-name {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Inter Tight", sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: #333333;
@@ -78,7 +78,7 @@ body {
 }
 
 .post-text {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Inter Tight", sans-serif;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
