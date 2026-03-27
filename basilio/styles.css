@@ -52,7 +52,7 @@ body {
   display: inline-flex;
 }
 
-.btn-disabled {
+.disabled {
   opacity: 25%;
 }
 
