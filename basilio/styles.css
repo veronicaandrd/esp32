@@ -49,6 +49,7 @@ body {
   box-shadow: inset -1px -1px 0 0 #00000014, inset 1px 1px 0 0 #ffffff;
   background-color: #ffffff80;
   font-size: 14px;
+  font-weight: 500;
   line-height: 20px;
   padding: 17px;
   border-radius: 32px;
