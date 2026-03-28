@@ -98,6 +98,16 @@ body {
   margin: 2px 0 5px;
 }
 
+.metadata {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 13px;
+  font-weight: 400;  
+  letter-spacing: 0.4px;
+  line-height: 18px;
+  color: #777777;
+  display: inline-block;
+}
+
 .mood-pill {
   font-family: "Inter Tight", sans-serif;
   font-size: 13px;
