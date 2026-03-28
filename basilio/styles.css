@@ -59,6 +59,10 @@ body {
   display: inline-flex;
 }
 
+.btn-full {
+  width: 100%;
+}
+
 .disabled {
   opacity: 25%;
 }
