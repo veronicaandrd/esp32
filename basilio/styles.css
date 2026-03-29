@@ -57,14 +57,15 @@ body {
   cursor: pointer;
   border: none;
   display: inline-flex;
+  gap: 8px;
 }
 
 .btn-label {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  margin-left: 3px;
-  margin-right: 12px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .full-width {
@@ -133,7 +134,7 @@ body {
   letter-spacing: 0.2px;
   line-height: 30px;
   color: #333333;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .post-date {
