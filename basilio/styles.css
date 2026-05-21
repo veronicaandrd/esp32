@@ -155,8 +155,20 @@ body {
   margin-top: 16px;
 }
 
-.card-section {
+.metadata {
   padding: 0px 30px 30px;
+  font-size: 12px;
+  font-family: "Roboto Mono", monospace;
+  line-height: 20px;
+  color: #777777;
+}
+
+.metadata span {
+  background-color: #f6f6f6;
+  padding: 2px 4px;
+  color: #589A4F;
+  margin-right: 2px;
+  border-radius: 2px;
 }
 
 .placeholder-card {
