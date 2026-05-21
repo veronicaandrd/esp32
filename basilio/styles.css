@@ -14,18 +14,6 @@ body {
   font-family: "Inter Tight", sans-serif;
 }
 
-.bg1 {
-  background: linear-gradient(160deg, #C9D2FB, #FDF5F4);
-  // background-attachment: fixed;
-  font-family: "Inter Tight", sans-serif;
-}
-
-.bg2 {
-  background: linear-gradient(160deg, #E3F2A6, #FFF9D5);
-  // background-attachment: fixed;
-  font-family: "Inter Tight", sans-serif;
-}
-
 .bg3 {
   background: linear-gradient(160deg, #F9F9F9, #EAEAEA);
   // background-attachment: fixed;
@@ -156,11 +144,12 @@ body {
 }
 
 .metadata {
-  padding: 0px 30px 30px;
+  padding: 0px 26px 30px 30px;
   font-size: 12px;
   font-family: "Roboto Mono", monospace;
   line-height: 20px;
   color: #777777;
+  letter-spacing: -0.1px;
 }
 
 .metadata span {
