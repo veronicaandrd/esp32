@@ -8,12 +8,6 @@ a {
   color: #444444;
 }
 
-body {
-  background: linear-gradient(160deg, #EAEAEA, #F9F9F9);
-  // background-attachment: fixed;
-  font-family: "Inter Tight", sans-serif;
-}
-
 .bg3 {
   background: linear-gradient(160deg, #F9F9F9, #EAEAEA);
   // background-attachment: fixed;
@@ -147,16 +141,16 @@ body {
   padding: 0px 26px 30px 30px;
   font-size: 12px;
   font-family: "Roboto Mono", monospace;
-  line-height: 20px;
+  line-height: 22px;
   color: #777777;
   letter-spacing: -0.1px;
 }
 
 .metadata span {
   background-color: #f6f6f6;
-  padding: 2px 4px;
+  padding: 1px 3px;
   color: #589A4F;
-  margin-right: 2px;
+  margin-right: 1px;
   border-radius: 2px;
 }
 
